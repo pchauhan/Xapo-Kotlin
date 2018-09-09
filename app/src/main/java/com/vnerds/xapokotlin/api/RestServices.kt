@@ -1,6 +1,7 @@
 package com.vnerds.xapokotlin.api
 
-import com.vnerds.xapokotlin.objects.Test
+import com.vnerds.xapokotlin.objects.Git_Object
+ 
 import retrofit2.Call
 import retrofit2.http.GET
 import retrofit2.http.Url
@@ -8,6 +9,6 @@ import retrofit2.http.Url
 interface RestServices {
 
     @GET
-    fun getTopRepository(@Url url: String): Call<Test>
+    fun getTopRepository(@Url url: String): Call<Git_Object>
 
 }
