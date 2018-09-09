@@ -12,7 +12,7 @@ import com.bumptech.glide.Glide
 import com.vnerds.xapokotlin.R
 import com.vnerds.xapokotlin.WebViewActivity
 import com.vnerds.xapokotlin.objects.ItemsItem
-import com.vnerds.xapokotlin.objects.Test
+
 import kotlinx.android.synthetic.main.activity_recyclerview_listitem.view.*
 
 import java.util.ArrayList

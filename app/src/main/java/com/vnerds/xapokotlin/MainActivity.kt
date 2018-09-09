@@ -15,8 +15,9 @@ import android.widget.ProgressBar
 import com.vnerds.xapokotlin.adapters.MyAdapter
 import com.vnerds.xapokotlin.api.RestClient
 import com.vnerds.xapokotlin.app.XapoApp
+import com.vnerds.xapokotlin.objects.Git_Object
 import com.vnerds.xapokotlin.objects.ItemsItem
-import com.vnerds.xapokotlin.objects.Test
+
 import kotlinx.android.synthetic.main.activity_main.*
 
 import java.text.SimpleDateFormat
@@ -89,16 +90,16 @@ class MainActivity : AppCompatActivity() {
         showDialog()
         val url = RestClient.search + currentDate
         val mCallGetTopRepo = XapoApp.restClient!!.applicationServices.getTopRepository(url)
-        mCallGetTopRepo.enqueue(object : Callback<Test> {
-            override fun onResponse(call: Call<Test>, response: Response<Test>) {
+        mCallGetTopRepo.enqueue(object : Callback<Git_Object> {
+            override fun onResponse(call: Call<Git_Object>, response: Response<Git_Object>) {
                 dismissDialog()
-                val git_object:Test? = response.body()
+                val git_object:Git_Object? = response.body()
                 if (git_object != null) {
                     mAdapter!!.updateAdapter(git_object.items)
                 }
             }
 
-            override fun onFailure(call: Call<Test>, t: Throwable) {
+            override fun onFailure(call: Call<Git_Object>, t: Throwable) {
 
             }
         })
